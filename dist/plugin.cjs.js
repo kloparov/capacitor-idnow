@@ -1,0 +1,138 @@
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var core = require('@capacitor/core');
+
+class IDnowResult {
+    constructor(t, c) {
+        this.type = t;
+        this.code = c;
+    }
+    getResultType() {
+        return this.type;
+    }
+    getStatusCode() {
+        return this.code;
+    }
+}
+exports.IdNowResultType = void 0;
+(function (IdNowResultType) {
+    IdNowResultType[IdNowResultType["FINISHED"] = 0] = "FINISHED";
+    IdNowResultType[IdNowResultType["ERROR"] = 1] = "ERROR";
+    IdNowResultType[IdNowResultType["CANCELLED"] = 2] = "CANCELLED";
+})(exports.IdNowResultType || (exports.IdNowResultType = {}));
+/**
+ *  For E102 it is recommended to create another ident, and restart the process with the new ident code.
+ *  For E103 it is recommended to show a screen to the user with the message that they have submitted all info needed and that they should wait for the final result.
+ *  For E170 it is recommended to notify the user that the ident process timed out or was started on a different device and ask them to try again.
+ *  E180 is to alert the host app if the context has been lost (OS restarted/killed SDK process).
+ *  For all other error codes it is recommended to show a generic error for the user and ask them to try again by restarting the process.
+ */
+exports.IdNowResultCode = void 0;
+(function (IdNowResultCode) {
+    // Ident code syntax incorrect
+    IdNowResultCode["IdentCodeSyntaxIncorrect"] = "E100";
+    // Ident code not found
+    IdNowResultCode["IdentCodeNotFound"] = "E101";
+    // Ident code expired 
+    IdNowResultCode["IdentCodeExpired"] = "E102";
+    // Ident code already completed
+    IdNowResultCode["IdentCodeAlreadyCompleted"] = "E103";
+    // Get ident info failed; invalid response
+    IdNowResultCode["GetIdentInfoFailedInvalidResponse"] = "E110";
+    // Get ident info failed; server reachability
+    IdNowResultCode["GetIdentInfoFailedServerReachability"] = "E111";
+    // Get ident resources failed; invalid response
+    IdNowResultCode["GetIdentResourcesFailedInvalidResponse"] = "E130";
+    // Get ident resources failed; server reachability
+    IdNowResultCode["GetIdentResourcesFailedServerReachability"] = "E131";
+    // Get name failed; invalid response
+    IdNowResultCode["GetNameFailedInvalidResponse"] = "E140";
+    // Get name failed; server reachability
+    IdNowResultCode["GetNameFailedServerReachability"] = "E141";
+    // Get name failed; full name missing
+    IdNowResultCode["GetNameFailedFullNameMissing"] = "E142";
+    // Start ident failed; invalid response
+    IdNowResultCode["StartIdentFailedInvalidResponse"] = "E150";
+    // Start ident failed; server reachability
+    IdNowResultCode["StartIdentFailedServerReachability"] = "E151";
+    // Start ident failed; missing session key 
+    IdNowResultCode["StartIdentFailedMissingSessionKey"] = "E152";
+    // Start ident failed; wrong ident method 
+    IdNowResultCode["StartIdentFailedWrongIdentMethod"] = "E153";
+    // Get Emirates NFC resources failed; invalid response
+    IdNowResultCode["GetEmiratesNFCResourcesFailedInvalidResponse"] = "E160";
+    // Get Emirates NFC resources failed; server reachability
+    IdNowResultCode["GetEmiratesNFCResourcesFailedServerReachability"] = "E161";
+    // Socket connection force closed
+    IdNowResultCode["SocketConnectionForceClosed"] = "E170";
+    // Process force closed
+    IdNowResultCode["ProcessForceClosed"] = "E171";
+    // Missing application context
+    IdNowResultCode["MissingApplicationContext"] = "E180";
+})(exports.IdNowResultCode || (exports.IdNowResultCode = {}));
+exports.LanguageCode = void 0;
+(function (LanguageCode) {
+    LanguageCode["Bulgarian"] = "bg";
+    LanguageCode["Czech"] = "cs";
+    LanguageCode["Danish"] = "da";
+    LanguageCode["German"] = "de";
+    LanguageCode["Greek"] = "el";
+    LanguageCode["English"] = "en";
+    LanguageCode["Spanish"] = "es";
+    LanguageCode["Estonian"] = "et";
+    LanguageCode["Finnish"] = "fi";
+    LanguageCode["French"] = "fr";
+    LanguageCode["Croatian"] = "hr";
+    LanguageCode["Hungarian"] = "hu";
+    LanguageCode["Italian"] = "it";
+    LanguageCode["Japanese"] = "ja";
+    LanguageCode["Georgian"] = "ka";
+    LanguageCode["Korean"] = "ko";
+    LanguageCode["Lithuanian"] = "lt";
+    LanguageCode["Latvian"] = "lv";
+    LanguageCode["Norwegian"] = "nb";
+    LanguageCode["Dutch"] = "nl";
+    LanguageCode["Polish"] = "pl";
+    LanguageCode["Portuguese"] = "pt";
+    LanguageCode["Romanian"] = "ro";
+    LanguageCode["Russian"] = "ru";
+    LanguageCode["Slovak"] = "sk";
+    LanguageCode["Slovenian"] = "sl";
+    LanguageCode["Serbian"] = "sr";
+    LanguageCode["Swedish"] = "sv";
+    LanguageCode["Turkish"] = "tr";
+    LanguageCode["Chinese"] = "zh";
+})(exports.LanguageCode || (exports.LanguageCode = {}));
+
+const IDnow = core.registerPlugin('IDnow', {
+    web: () => Promise.resolve().then(function () { return web; }).then(m => new m.IDnowWeb()),
+});
+
+class IDnowWeb extends core.WebPlugin {
+    checkPermissions() {
+        throw new Error('Method not implemented.');
+    }
+    requestPermissions() {
+        throw new Error('Method not implemented.');
+    }
+    initialize(_options) {
+        throw new Error('Method not implemented.');
+    }
+    sartIdent(_options) {
+        throw new Error('Method not implemented.');
+    }
+    removeAllListeners() {
+        throw new Error('Method not implemented.');
+    }
+}
+
+var web = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    IDnowWeb: IDnowWeb
+});
+
+exports.IDnow = IDnow;
+exports.IDnowResult = IDnowResult;
+//# sourceMappingURL=plugin.cjs.js.map

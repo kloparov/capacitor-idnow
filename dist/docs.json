@@ -1,0 +1,415 @@
+{
+  "api": {
+    "name": "IDnowPlugin",
+    "slug": "idnowplugin",
+    "docs": "",
+    "tags": [],
+    "methods": [
+      {
+        "name": "initialize",
+        "signature": "(options: IdnowOptions) => Promise<void>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": " SDK initialization functions so we can set properly language and future properties.",
+            "type": "IdnowOptions"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "options  SDK initialization functions so we can set properly language and future properties."
+          }
+        ],
+        "docs": "",
+        "complexTypes": [
+          "IdnowOptions"
+        ],
+        "slug": "initialize"
+      },
+      {
+        "name": "sartIdent",
+        "signature": "(options: IdnowIdentOptions) => Promise<void>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": " Contains a unique Ident-ID is created for each identification process and is specific to you. \n Your Ident-ID is composed of 8 letters with the format ABC-DEFGH.\n If you have problems with your Ident-ID, please contact the partner that supplied this to you.",
+            "type": "IdnowIdentOptions"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "options  Contains a unique Ident-ID is created for each identification process and is specific to you. \n Your Ident-ID is composed of 8 letters with the format ABC-DEFGH.\n If you have problems with your Ident-ID, please contact the partner that supplied this to you."
+          }
+        ],
+        "docs": "SDK SartIdent override",
+        "complexTypes": [
+          "IdnowIdentOptions"
+        ],
+        "slug": "sartident"
+      },
+      {
+        "name": "addListener",
+        "signature": "(eventName: 'finished', listenerFunc: (event: IDnowResult) => void) => Promise<PluginListenerHandle>",
+        "parameters": [
+          {
+            "name": "eventName",
+            "docs": "",
+            "type": "'finished'"
+          },
+          {
+            "name": "listenerFunc",
+            "docs": "",
+            "type": "(event: IDnowResult) => void"
+          }
+        ],
+        "returns": "Promise<PluginListenerHandle>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "PluginListenerHandle",
+          "IDnowResult"
+        ],
+        "slug": "addlistenerfinished-"
+      },
+      {
+        "name": "addListener",
+        "signature": "(eventName: 'error', listenerFunc: (event: IDnowResult) => void) => Promise<PluginListenerHandle>",
+        "parameters": [
+          {
+            "name": "eventName",
+            "docs": "",
+            "type": "'error'"
+          },
+          {
+            "name": "listenerFunc",
+            "docs": "",
+            "type": "(event: IDnowResult) => void"
+          }
+        ],
+        "returns": "Promise<PluginListenerHandle>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "PluginListenerHandle",
+          "IDnowResult"
+        ],
+        "slug": "addlistenererror-"
+      },
+      {
+        "name": "addListener",
+        "signature": "(eventName: 'cancelled', listenerFunc: (event: IDnowResult) => void) => Promise<PluginListenerHandle>",
+        "parameters": [
+          {
+            "name": "eventName",
+            "docs": "",
+            "type": "'cancelled'"
+          },
+          {
+            "name": "listenerFunc",
+            "docs": "",
+            "type": "(event: IDnowResult) => void"
+          }
+        ],
+        "returns": "Promise<PluginListenerHandle>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "PluginListenerHandle",
+          "IDnowResult"
+        ],
+        "slug": "addlistenercancelled-"
+      },
+      {
+        "name": "checkPermissions",
+        "signature": "() => Promise<PermissionStatus>",
+        "parameters": [],
+        "returns": "Promise<any>",
+        "tags": [
+          {
+            "name": "since",
+            "text": "0.0.1"
+          }
+        ],
+        "docs": "Check camera permission.\n\nOnly available on Android and iOS.",
+        "complexTypes": [
+          "PermissionStatus"
+        ],
+        "slug": "checkpermissions"
+      },
+      {
+        "name": "requestPermissions",
+        "signature": "() => Promise<PermissionStatus>",
+        "parameters": [],
+        "returns": "Promise<any>",
+        "tags": [
+          {
+            "name": "since",
+            "text": "0.0.1"
+          }
+        ],
+        "docs": "Request camera permission.\n\nOnly available on Android and iOS.",
+        "complexTypes": [
+          "PermissionStatus"
+        ],
+        "slug": "requestpermissions"
+      },
+      {
+        "name": "removeAllListeners",
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "removealllisteners"
+      }
+    ],
+    "properties": []
+  },
+  "interfaces": [
+    {
+      "name": "IdnowOptions",
+      "slug": "idnowoptions",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "language",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "LanguageCode"
+          ],
+          "type": "LanguageCode"
+        }
+      ]
+    },
+    {
+      "name": "IdnowIdentOptions",
+      "slug": "idnowidentoptions",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "id",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "PluginListenerHandle",
+      "slug": "pluginlistenerhandle",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "remove",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "() => Promise<void>"
+        }
+      ]
+    }
+  ],
+  "enums": [
+    {
+      "name": "LanguageCode",
+      "slug": "languagecode",
+      "members": [
+        {
+          "name": "Bulgarian",
+          "value": "\"bg\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "Czech",
+          "value": "\"cs\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "Danish",
+          "value": "\"da\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "German",
+          "value": "\"de\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "Greek",
+          "value": "\"el\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "English",
+          "value": "\"en\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "Spanish",
+          "value": "\"es\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "Estonian",
+          "value": "\"et\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "Finnish",
+          "value": "\"fi\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "French",
+          "value": "\"fr\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "Croatian",
+          "value": "\"hr\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "Hungarian",
+          "value": "\"hu\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "Italian",
+          "value": "\"it\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "Japanese",
+          "value": "\"ja\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "Georgian",
+          "value": "\"ka\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "Korean",
+          "value": "\"ko\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "Lithuanian",
+          "value": "\"lt\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "Latvian",
+          "value": "\"lv\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "Norwegian",
+          "value": "\"nb\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "Dutch",
+          "value": "\"nl\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "Polish",
+          "value": "\"pl\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "Portuguese",
+          "value": "\"pt\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "Romanian",
+          "value": "\"ro\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "Russian",
+          "value": "\"ru\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "Slovak",
+          "value": "\"sk\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "Slovenian",
+          "value": "\"sl\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "Serbian",
+          "value": "\"sr\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "Swedish",
+          "value": "\"sv\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "Turkish",
+          "value": "\"tr\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "Chinese",
+          "value": "\"zh\"",
+          "tags": [],
+          "docs": ""
+        }
+      ]
+    }
+  ],
+  "typeAliases": [],
+  "pluginConfigs": []
+}
